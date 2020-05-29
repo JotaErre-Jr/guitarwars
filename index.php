@@ -20,10 +20,10 @@
 
       //faz um loop através do array contatdo os dados das pontuações, formatando-os com HTML <table>
       while ($row = mysqli_fetch_array($data)) {
-        echo'<tr><td class="scoreinfo">';
+          echo'<tr><td class="scoreinfo">';
           echo'<span class="score">'.$row['score'].'</span><br/>';
           echo'<strong>Name:</strong>'.$row['name'].'<br/>';
-          echo'<strong>Date: </strong>'.$row['date'].'</td></tr>';
+          echo'<strong>Date: </strong>'.$row['date'].'</td></tr><br/>';
       }
       echo'</table>';
       mysqli_close($db);
