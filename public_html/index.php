@@ -11,6 +11,7 @@
     <hr/>
     <?php
     define('GW_UPLOADPATH', 'images');
+    define('GW_MAXFILESIZE', '32768');
       //conecta-se ao banco de dados
       $db = mysqli_connect('localhost', 'root', '', 'gwdb')
       or die('Erro ao se cobectar com servidor MYSQL');
