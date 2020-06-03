@@ -9,7 +9,8 @@
       <legend>Marque as pontuação que você deseja excluir</legend>
       <form class="" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <?php
-          $db = mysqli_connect('localhost', 'root', '', 'gwdb')
+        require_once('connectvars.php');
+          $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
           or die('Erro ao se conectar com o servidor MYSQL');
           if (isset($_POST['submit'])) {
             foreach ($_POST['todelete'] as $delete_id) {

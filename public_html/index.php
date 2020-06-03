@@ -10,10 +10,11 @@
     recordes do Guitar Wars? <a href="addscore.php">Clique aqui</a> para adicionar sua pontuação</p>
     <hr/>
     <?php
-    define('GW_UPLOADPATH', 'images');
+    require_once('appvars.php');
+    require_once('connectvars.php');
     define('GW_MAXFILESIZE', '32768');
       //conecta-se ao banco de dados
-      $db = mysqli_connect('localhost', 'root', '', 'gwdb')
+      $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
       or die('Erro ao se cobectar com servidor MYSQL');
 
       //obtem os dados das pontuações a partir do Mysql

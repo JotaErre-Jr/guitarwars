@@ -7,7 +7,8 @@
   <body>
     <?php
     //Define as constantes do caminho e do tamanho máximo dos arquivos
-    define('GW_UPLOADPATH', 'images');
+    require_once('appvars.php');
+    require_once('connectvars.php');
       if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $score = $_POST['score'];
@@ -15,9 +16,9 @@
 
         if (!empty($name) && !empty($score) && !empty($screenshot)) {
           //Move o arquivo para a pasta alvo
-          $target = GW_UPLOADPATH.$screenshot;
+          $target = GW_UPLOADPATH.time().$screenshot;
           if (move_uploaded_file($_FILES['screenshot'] ['tmp_name'], $target)) {
-            $db = mysqli_connect('localhost', 'root', '', 'gwdb')
+            $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
             or die('Erro ao se conectar ao servidor MYSQL');
             $query = "INSERT INTO guitarwars VALUES(0, NOW(), '$name', '$score', '$screenshot')";
 
