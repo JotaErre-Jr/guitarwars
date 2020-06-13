@@ -13,7 +13,6 @@
     <?php
     require_once('appvars.php');
     require_once('connectvars.php');
-    define('GW_MAXFILESIZE', '32768');
       //conecta-se ao banco de dados
       $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
       or die('Erro ao se cobectar com servidor MYSQL');
