@@ -8,8 +8,8 @@
     <?php
       require_once('appvars.php');
       require_once('connectvars.php');
-
-      $db = mysqli_connect('localhost', 'root', '', 'gwdb')
+    
+      $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
       or die('Erro ao se conectar com o servidor MYSQL');
 
       $query = "SELECT * FROM guitarwars ORDER BY score DESC, date ASC";
