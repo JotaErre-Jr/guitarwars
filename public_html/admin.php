@@ -8,7 +8,7 @@
     <?php
       require_once('appvars.php');
       require_once('connectvars.php');
-    
+
       $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
       or die('Erro ao se conectar com o servidor MYSQL');
 
@@ -21,7 +21,7 @@
           echo '<td>'.$row['date'].'</td>';
           echo '<td>'.$row['score'].'</td>';
           //Gera o link HTML para o script removescore.php, enviando a ele informações sobre a pontuaçõa a ser excluida
-          echo '<td><a href = "removescore.php?id='.$row['id'].'&amp;date='.$row['date'].
+          echo '<td><a href = "removeteste.php?id='.$row['id'].'&amp;date='.$row['date'].
           '&amp;name='.$row['name'].'&amp;score='.$row['score'].
           '&amp;screenshot='.$row['screenshot'].'">Remove</a></td></tr>';
       }

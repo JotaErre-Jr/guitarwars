@@ -27,17 +27,17 @@
         echo '<p>Deculpe, nem uma pontuação foi especifivada para ser removida!</p>';
       }
       if (isset($_POST['submit'])) {
-        if ($_POST['confirm'] == 'YES') {
+        if ($_POST['confirm'] == 'Yes') {
           //exclui o arquivo grafico do servidor
           @unlink(GW_UPLOADPATH.$screeshot);
 
           //conexão com o banco de dados
-          $db = mysqli('DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME');
+          $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
           //exclui os dados da pontuação do banco
           $query = "DELETE FROM guitarwars WHERE id = $id LIMIT 1";
 
-          mysqli_query($bd, $query);
+          mysqli_query($db, $query);
 
           mysqli_close($db);
           //confirma exito com o usuário
